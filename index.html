@@ -15,7 +15,12 @@
   t.src=v;s=b.getElementsByTagName(e)[0];
   s.parentNode.insertBefore(t,s)}(window, document,'script',
   'https://connect.facebook.net/en_US/fbevents.js');
+
   fbq('init', '1137352338486387');
+
+  // 🚫 Bloqueia eventos automáticos (como Subscribe)
+  fbq('set', 'autoConfig', false, '1137352338486387');
+
   fbq('track', 'PageView');
   </script>
   <!-- End Meta Pixel -->
@@ -32,162 +37,32 @@
       --shadow:0 10px 25px rgba(0,0,0,.1);
       --radius:18px;
     }
-
     *{box-sizing:border-box;margin:0;padding:0}
-    body{
-      font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
-      background:#fff;color:#222;
-      padding-bottom:80px;
-    }
-
-    header{
-      background: linear-gradient(135deg, #fd27b2 0%, #e84546 100%);
-      padding:20px 20px 26px;
-      text-align:center;
-      border-radius:0 0 28px 28px;
-      color:var(--white);
-      box-shadow:var(--shadow);
-    }
-    .logo-wrap{
-      width:120px;
-      height:120px;
-      margin:0 auto 12px;
-      border-radius:50%;
-      background:#fff;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      box-shadow:0 8px 20px rgba(0,0,0,.2);
-      overflow:hidden;
-    }
-    .logo-wrap img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      object-position:center;
-      border-radius:50%;
-    }
+    body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:#fff;color:#222;padding-bottom:80px;}
+    header{background: linear-gradient(135deg, #fd27b2 0%, #e84546 100%);padding:20px 20px 26px;text-align:center;border-radius:0 0 28px 28px;color:var(--white);box-shadow:var(--shadow);}
+    .logo-wrap{width:120px;height:120px;margin:0 auto 12px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(0,0,0,.2);overflow:hidden;}
+    .logo-wrap img{width:100%;height:100%;object-fit:cover;object-position:center;border-radius:50%;}
     h1{font-size:28px;font-weight:800;margin-bottom:6px;}
-    .subtitle{
-      font-size:15px;
-      color:#f1f1f1;
-      margin-bottom:10px;
-    }
-
-    /* Barra de vagas */
-    .vacancy-wrap{
-      max-width:600px;
-      margin:6px auto 12px;
-      text-align:center;
-    }
-    .vacancy-top{
-      font-weight:800;
-      font-size:17px;
-      margin-bottom:6px;
-    }
-    .bar{
-      width:100%;height:16px;background:#f1f1f1;
-      border:2px solid #ddd;border-radius:999px;
-      position:relative;overflow:hidden;
-    }
-    .bar>.fill{
-      position:absolute;inset:0 100% 0 0;
-      background:linear-gradient(90deg,var(--amber),var(--amber-dark));
-      border-radius:999px;
-      transition:inset .5s ease;
-    }
-
-    /* CTA */
-    .cta-section{
-      text-align:center;
-      margin:10px auto 0;
-      padding:15px;
-      max-width:700px;
-    }
-    .cta-btn{
-      display:inline-block;padding:16px 32px;
-      width:100%;
-      border-radius:999px;font-weight:800;font-size:18px;
-      background:linear-gradient(180deg,#fd27b2,#e84546);
-      color:#fff;border:none;cursor:pointer;
-      animation:pulse 1.6s ease-in-out infinite;
-      box-shadow:0 10px 25px rgba(232,69,70,.35);
-    }
-    @keyframes pulse{
-      0%,100%{transform:scale(1);}
-      50%{transform:scale(1.06);}
-    }
-
-    /* Feed */
-    .feed{
-      margin:18px auto 12px;
-      max-width:500px;
-      background:#f0f0f0;
-      border:1px solid #ccc;
-      border-radius:16px;
-      padding:12px;
-    }
-    .notif{
-      display:flex;align-items:center;gap:10px;
-      background:#fff;padding:10px;border-radius:12px;
-      margin-bottom:10px;border:1px solid #eee;
-      font-size:14px;font-weight:600;
-      opacity:0;transform:translateY(-20px);
-      animation:slideDown .4s ease forwards;
-    }
-    .notif .badge{
-      background:rgba(46,204,113,.15);
-      border:1px solid rgba(46,204,113,.3);
-      color:#1e8e3e;font-weight:800;font-size:13px;
-      padding:6px 8px;border-radius:999px;
-    }
-    @keyframes slideDown{
-      to{opacity:1;transform:translateY(0);}
-    }
-
-    /* Vantagens */
+    .subtitle{font-size:15px;color:#f1f1f1;margin-bottom:10px;}
+    .vacancy-wrap{max-width:600px;margin:6px auto 12px;text-align:center;}
+    .vacancy-top{font-weight:800;font-size:17px;margin-bottom:6px;}
+    .bar{width:100%;height:16px;background:#f1f1f1;border:2px solid #ddd;border-radius:999px;position:relative;overflow:hidden;}
+    .bar>.fill{position:absolute;inset:0 100% 0 0;background:linear-gradient(90deg,var(--amber),var(--amber-dark));border-radius:999px;transition:inset .5s ease;}
+    .cta-section{text-align:center;margin:10px auto 0;padding:15px;max-width:700px;}
+    .cta-btn{display:inline-block;padding:16px 32px;width:100%;border-radius:999px;font-weight:800;font-size:18px;background:linear-gradient(180deg,#fd27b2,#e84546);color:#fff;border:none;cursor:pointer;animation:pulse 1.6s ease-in-out infinite;box-shadow:0 10px 25px rgba(232,69,70,.35);}
+    @keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.06);}}
+    .feed{margin:18px auto 12px;max-width:500px;background:#f0f0f0;border:1px solid #ccc;border-radius:16px;padding:12px;}
+    .notif{display:flex;align-items:center;gap:10px;background:#fff;padding:10px;border-radius:12px;margin-bottom:10px;border:1px solid #eee;font-size:14px;font-weight:600;opacity:0;transform:translateY(-20px);animation:slideDown .4s ease forwards;}
+    .notif .badge{background:rgba(46,204,113,.15);border:1px solid rgba(46,204,113,.3);color:#1e8e3e;font-weight:800;font-size:13px;padding:6px 8px;border-radius:999px;}
+    @keyframes slideDown{to{opacity:1;transform:translateY(0);}}
     .benefits{max-width:700px;margin:8px auto;padding:0 15px;}
-    .benefit{
-      display:flex;align-items:center;gap:14px;
-      background:rgba(232,69,70,0.08);
-      border-radius:16px;
-      padding:14px 16px;margin-bottom:14px;
-      border:1px solid var(--pink);
-      box-shadow:0 4px 10px rgba(0,0,0,0.05);
-    }
-    .emojibox{
-      width:46px;height:46px;min-width:46px;
-      display:flex;align-items:center;justify-content:center;
-      background:linear-gradient(180deg,var(--amber),var(--amber-dark));
-      border-radius:12px;
-      font-size:22px;
-    }
-    .benefit-text h4{
-      font-size:17px;font-weight:800;margin-bottom:2px;
-    }
-    .benefit-text p{
-      font-size:14px;color:var(--muted);margin:0;
-    }
-
-    /* Rodapé fixo */
-    .sticky-footer{
-      position:fixed;bottom:0;left:0;right:0;
-      background:#111;color:#fff;
-      padding:12px 16px;
-      box-shadow:0 -8px 20px rgba(0,0,0,.2);
-      display:flex;align-items:center;justify-content:space-between;
-      z-index:50;
-    }
+    .benefit{display:flex;align-items:center;gap:14px;background:rgba(232,69,70,0.08);border-radius:16px;padding:14px 16px;margin-bottom:14px;border:1px solid var(--pink);box-shadow:0 4px 10px rgba(0,0,0,0.05);}
+    .emojibox{width:46px;height:46px;min-width:46px;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,var(--amber),var(--amber-dark));border-radius:12px;font-size:22px;}
+    .benefit-text h4{font-size:17px;font-weight:800;margin-bottom:2px;}
+    .benefit-text p{font-size:14px;color:var(--muted);margin:0;}
+    .sticky-footer{position:fixed;bottom:0;left:0;right:0;background:#111;color:#fff;padding:12px 16px;box-shadow:0 -8px 20px rgba(0,0,0,.2);display:flex;align-items:center;justify-content:space-between;z-index:50;}
     .sticky-footer div{font-weight:700;}
-    .sticky-btn{
-      background:linear-gradient(180deg,#fd27b2,#e84546);
-      color:#fff;border:none;border-radius:999px;
-      padding:14px 26px;
-      font-weight:800;font-size:15px;
-      cursor:pointer;
-      box-shadow:0 6px 16px rgba(232,69,70,.35);
-      margin-left:10px;
-    }
+    .sticky-btn{background:linear-gradient(180deg,#fd27b2,#e84546);color:#fff;border:none;border-radius:999px;padding:14px 26px;font-weight:800;font-size:15px;cursor:pointer;box-shadow:0 6px 16px rgba(232,69,70,.35);margin-left:10px;}
   </style>
 </head>
 <body>
@@ -251,8 +126,7 @@
     const vacancyText=document.getElementById('vacancyText');
     const fillBar=document.getElementById('fillBar');
 
-    const NAMES_POOL=[
-      "Francisca Lacerda","Rosália Maria","Maria Júlia Souza","Ana Beatriz Nogueira","Josefa Almeida",
+    const NAMES_POOL=[ "Francisca Lacerda","Rosália Maria","Maria Júlia Souza","Ana Beatriz Nogueira","Josefa Almeida",
       "Tereza Lemos","Joana Prado","Helena Barbosa","Cecília Andrade","Laura Pacheco","Clara Moreira",
       "Isabel Figueira","Marta Azevedo","Aurora Fernandes","Olívia Castro","Beatriz Siqueira",
       "Lúcia Nunes","Ester Carvalho","Camila Duarte","Regina Campos","Noêmia Teixeira","Paula Rezende",
@@ -267,9 +141,7 @@
     function normalizeDateStr(d){return new Date(d.getFullYear(), d.getMonth(), d.getDate()).toDateString();}
     const todayStr = normalizeDateStr(new Date());
     const lastResetDate = localStorage.getItem("lastResetDate");
-    if (lastResetDate !== todayStr) {
-      resetVacancies();
-    }
+    if (lastResetDate !== todayStr) { resetVacancies(); }
     scheduleMidnightReset();
 
     function resetVacancies(){
@@ -278,7 +150,6 @@
       localStorage.setItem("lastResetDate", normalizeDateStr(new Date()));
       updateVacancyUI();
     }
-
     function scheduleMidnightReset(){
       const now = new Date();
       const nextMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 0);
@@ -288,14 +159,12 @@
         setInterval(resetVacancies, 24*60*60*1000);
       }, msToMidnight);
     }
-
     function updateVacancyUI(){
       vacancyText.textContent=`Últimas vagas de hoje • Restam ${currentVacancies} 👇`;
       const filled=(START_VACANCIES-currentVacancies)/(START_VACANCIES-MIN_VACANCIES);
       const pct=Math.max(0,Math.min(1,filled));
       fillBar.style.inset=`0 ${(1-pct)*100}% 0 0`;
     }
-
     function step(){
       if(currentVacancies<=MIN_VACANCIES) return;
       if(namesQueue.length===0) namesQueue=shuffle([...NAMES_POOL]);
@@ -309,33 +178,26 @@
         setTimeout(step,nextMs);
       }
     }
-
     function pushNotification(name){
       const row=document.createElement('div');
       row.className='notif';
       row.innerHTML=`<div class="badge">✅</div><div><strong>${name}</strong> entrou no grupo</div>`;
-      if(feedEl.firstChild){
-        feedEl.insertBefore(row,feedEl.firstChild);
-      }else{
-        feedEl.appendChild(row);
-      }
-      if(feedEl.children.length>3){
-        feedEl.removeChild(feedEl.lastChild);
-      }
+      if(feedEl.firstChild){ feedEl.insertBefore(row,feedEl.firstChild); }
+      else{ feedEl.appendChild(row); }
+      if(feedEl.children.length>3){ feedEl.removeChild(feedEl.lastChild); }
     }
 
     function handleClick(){
       try{ fbq('track','Lead'); }catch(e){}
       setTimeout(()=>{ window.open(WHATS_LINK,'_blank'); },500);
     }
+
     document.getElementById('ctaMain').addEventListener('click',handleClick);
     document.getElementById('ctaFooter').addEventListener('click',handleClick);
 
     window.addEventListener('load',()=>{
       updateVacancyUI();
-      if(currentVacancies>MIN_VACANCIES){
-        setTimeout(step,1000);
-      }
+      if(currentVacancies>MIN_VACANCIES){ setTimeout(step,1000); }
       try{ fbq('track','ViewContent',{content_name:'Landing Grupo WhatsApp'}) }catch(e){}
     });
   </script>
